@@ -1,0 +1,14 @@
+{
+  "cryptoRates": [
+    {
+      "id": "kaddex@kadena",
+      "formattedPrice": "0.0262215",
+      "percentChange": -12.506323232704695
+    },
+    {
+      "id": "kadena",
+      "formattedPrice": "0.834327",
+      "percentChange": -6.1000975049840065
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "cryptocurrencies": [
+    {
+      "eucId": "kaddex@kadena",
+      "partnerSymbol": "kaddex"
+    },
+    {
+      "eucId": "kadena",
+      "partnerSymbol": "kadena"
+    }
+  ]
+}

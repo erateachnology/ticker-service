@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <logger name="com.eucalyptuslabs" level="debug"/>
+
+    <springProfile name="!local">
+
+        <property name="LOGS_DIRECTORY" value="logs"/>
+
+        <appender name="RollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <file>${LOGS_DIRECTORY}/backend.log</file>
+            <append>true</append>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <fileNamePattern>${LOGS_DIRECTORY}/archived/backend-%d{yyyy-MM-dd}.log.gz</fileNamePattern>
+                <maxHistory>30</maxHistory>
+                <totalSizeCap>2GB</totalSizeCap>
+            </rollingPolicy>
+            <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+                <layout class="ch.qos.logback.classic.PatternLayout">
+                    <Pattern>%d %p [%X{refId}] - %m%n</Pattern>
+                </layout>
+            </encoder>
+        </appender>
+
+        <root level="info">
+            <appender-ref ref="RollingFile"/>
+        </root>
+
+    </springProfile>
+
+    <springProfile name="production">
+        <logger name="com.eucalyptuslabs" level="info"/>
+
+    </springProfile>
+
+    <springProfile name="local|local-ssl|local-dev">
+        <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+                <layout class="ch.qos.logback.classic.PatternLayout">
+                    <Pattern>%d %p %logger [%t] [%X{refId}] - %m%n</Pattern>
+                </layout>
+            </encoder>
+        </appender>
+
+        <root level="info">
+            <appender-ref ref="Console"/>
+        </root>
+    </springProfile>
+
+</configuration>

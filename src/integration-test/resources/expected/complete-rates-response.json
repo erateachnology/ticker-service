@@ -1,0 +1,14 @@
+{
+  "cryptoRates": [
+    {
+      "id": "kadena",
+      "formattedPrice": "1.41754834",
+      "percentChange": -0.06067344
+    },
+    {
+      "id": "flux@kadena",
+      "formattedPrice": "0.85257391",
+      "percentChange": -4.68747056
+    }
+  ]
+}

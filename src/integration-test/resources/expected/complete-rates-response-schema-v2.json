@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "properties": {
+    "cryptoRates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "formattedPrice": {
+            "type": "string"
+          },
+          "percentChange": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "formattedPrice",
+          "id"
+        ]
+      }
+    }
+  },
+  "required": [
+    "cryptoRates"
+  ]
+}

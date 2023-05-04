@@ -1,0 +1,12 @@
+stages:
+  - build
+
+maven-build:
+  image: maven:3-openjdk-17
+  stage: build
+  script:
+    - mvn install -B
+    - mvn -f backend-commons/pom.xml package -B
+  only:
+    - develop
+    - master

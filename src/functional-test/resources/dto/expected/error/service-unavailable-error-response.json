@@ -1,0 +1,6 @@
+{
+  "errorId": "00000000-0000-0064-0000-0000000000c8",
+  "timestamp": "1973-03-03T09:46:40Z",
+  "errorCode": "HTTP-500",
+  "path": "/ticker/v1/rates/complete/fiat/USD"
+}
